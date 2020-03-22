@@ -1,0 +1,6 @@
+{
+    "compilerOptions": {
+        "baseUrl": "/Applications/MAMP/htdocs/pfe/brainer_front/src/"
+    },
+    "include": ["/Applications/MAMP/htdocs/pfe/brainer_front/src/"]
+}
