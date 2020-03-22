@@ -39,7 +39,7 @@ const FlashCards = () => {
 
   useEffect(() => {
     const URL =
-      "http://127.0.0.1:8000/flashCards/show/all?limit=8&page_number=1";
+      "http://api.brainers.xyz:80/flashCards/show/all?limit=8&page_number=1";
     fetch(URL, {
       method: "POST",
       headers: {

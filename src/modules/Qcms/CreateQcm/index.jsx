@@ -51,7 +51,7 @@ const CreateQcm = () => {
     console.log(form);
     console.log(form.get("qcmName"));
     let URL =
-      "http://127.0.0.1:8000/qcm/new?qcm_name=" +
+      "http://api.brainers.xyz:80/qcm/new?qcm_name=" +
       form.get("qcmName") +
       "&qcm_description=" +
       form.get("qcmDescription");

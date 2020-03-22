@@ -31,7 +31,7 @@ const ClassroomList = () => {
   );
 
   useEffect(() => {
-    const URL = "http://127.0.0.1:8000/classroom/shows";
+    const URL = "http://api.brainers.xyz:80/classroom/shows";
     fetch(URL, {
       method: "GET",
       headers: {

@@ -64,7 +64,7 @@ const CreateFlashCards = () => {
 
   //   useEffect(() => {
   //     const URL =
-  //       "http://127.0.0.1:8000/flashCards/new?recto_type=text&verso_type=text";
+  //       "http://api.brainers.xyz:80/flashCards/new?recto_type=text&verso_type=text";
   //     fetch(URL, { method: "POST" })
   //       .then(response => response.json())
   //       .then(buildList)
@@ -76,7 +76,7 @@ const CreateFlashCards = () => {
     e.preventDefault();
     console.log(form);
     let URL =
-      "http://127.0.0.1:8000/flashCards/new?recto_type=text&verso_type=text&fc_name=" +
+      "http://api.brainers.xyz:80/flashCards/new?recto_type=text&verso_type=text&fc_name=" +
       fcName +
       "&recto_name=" +
       rectoName +

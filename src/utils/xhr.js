@@ -1,5 +1,5 @@
 export default (path, method) => {
-    const URL = "http://127.0.0.1:8000" + path;
+    const URL = "http://api.brainers.xyz:80" + path;
     fetch(URL, {
             method: method
         })

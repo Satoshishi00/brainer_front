@@ -36,7 +36,7 @@ const Home = () => {
   );
 
   useEffect(() => {
-    const URL = "http://127.0.0.1:8000/qcm/show/all?limit=6&page_number=1";
+    const URL = "http://api.brainers.xyz:80/qcm/show/all?limit=6&page_number=1";
     fetch(URL, {
       method: "GET",
       headers: {
