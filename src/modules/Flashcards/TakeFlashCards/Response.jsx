@@ -26,6 +26,7 @@ const Response = ({ fc, card, upGreen, downRed }) => {
           className="absolute flashcards-card img-front"
         >
           <img
+            alt="image de la carte"
             className="flashcards-card-item"
             src={"http://api.brainers.xyz:80/medias/images/" + card.card_recto}
           ></img>
