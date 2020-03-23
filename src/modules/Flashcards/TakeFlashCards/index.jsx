@@ -32,7 +32,7 @@ const TakeFlashCards = () => {
         console.log(error);
       } else if (data.logout) {
         console.log("On se déconnecte");
-        window.location.replace("http://localhost:3000/signin");
+        window.location.replace("http://www.brainers.xyz:80/signin");
       } else if (data.finish) {
         setIsFinish(data.finish);
       } else {
