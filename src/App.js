@@ -34,6 +34,9 @@ import MakeClassroom from "modules/Classroom/MakeClassroom";
 
 import Provider from "contexts/UserContext";
 
+// Try to import css in s
+import './main.css';
+
 
 const App = () => (
      <Router>
