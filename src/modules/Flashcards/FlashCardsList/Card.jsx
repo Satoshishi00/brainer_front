@@ -5,7 +5,7 @@ const Card = ({ id_card, name, description, nb_cards }) => {
   console.log("description = " + description);
   console.log("nb_cards = " + nb_cards);
   return (
-    <a href={"flashCards/" + id_card} className="card-container">
+    <a href={"flashcards/" + id_card} className="card-container">
       <h3>{name}</h3>
       <span className="card-description">{description}</span>
       <span className="qcm-nb_question">
