@@ -40,7 +40,10 @@ const CreateQcm = () => {
 
   const addQuestion = e => {
     e && e.preventDefault();
-    setQuestions([...questions, <QuestionInput num={questionNumber} />]);
+    setQuestions([
+      ...questions,
+      <QuestionInput num={questionNumber} key={questionNumber} />
+    ]);
 
     setQuestionNumber(questionNumber + 1);
   };
@@ -48,13 +51,36 @@ const CreateQcm = () => {
   const createQcm = e => {
     let form = new FormData(e.target);
     e.preventDefault();
-    console.log(form);
-    console.log(form.get("qcmName"));
+
     let URL =
       "http://api.brainers.xyz:80/qcm/new?qcm_name=" +
       form.get("qcmName") +
       "&qcm_description=" +
       form.get("qcmDescription");
+
+    for (let i = 1; i < questionNumber; i++) {
+      console.log(form.get("question" + i));
+      URL += "&question" + i + "=" + form.get("question" + i);
+
+      console.log(form.get("q" + i + "_advice"));
+      URL += "&q" + i + "_advice=" + form.get("q" + i + "_advice");
+
+      let j = 1;
+      while (form.get("q" + i + "_rep" + j)) {
+        console.log(form.get("q" + i + "_rep" + j));
+        URL += "&q" + i + "_rep" + j + "=" + form.get("q" + i + "_rep" + j);
+        if (form.get("q" + i + "_ans" + j) === "on") {
+          console.log(true);
+          URL += "&q" + i + "_ans" + j + "=true";
+        } else {
+          console.log(false);
+          URL += "&q" + i + "_ans" + j + "=false";
+        }
+        // console.log(form.get("q" + i + "_ans" + j));
+        j++;
+      }
+    }
+
     console.log(URL);
     fetch(URL, {
       method: "POST",
@@ -127,9 +153,7 @@ const CreateQcm = () => {
           </ButtonSuccess>
         </div>
 
-        <ButtonPrimary id="btn-create-qcm" onClick={() => {}}>
-          Fabriquer
-        </ButtonPrimary>
+        <ButtonPrimary id="btn-create-qcm">Fabriquer</ButtonPrimary>
       </form>
     </div>
   );

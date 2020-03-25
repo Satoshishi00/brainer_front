@@ -624,3 +624,14 @@ div.topbar-item-container .topbar-item {
 .fa-minus:hover {
     cursor: pointer;
 }
+
+.checkbox-qcm {
+    position: absolute;
+    margin-left: 0.7rem;
+    height: 3rem;
+    width: 1rem;
+}
+
+.checkbox-qcm:hover {
+    cursor: pointer;
+}

@@ -7,10 +7,12 @@ import "react-toastify/dist/ReactToastify.css";
 
 const QuestionInput = props => {
   const [question, setQuestion] = useState("");
+  const [advice, setAdvice] = useState("");
   const [nbOfAnswers, setNbOfAnswers] = useState(1);
   const [answers, setAnswers] = useState([]);
 
   const updateQuestion = useCallback(e => setQuestion(e.target.value), []);
+  const updateAdvice = useCallback(e => setAdvice(e.target.value), []);
 
   const updateAnswer = useCallback(
     (e, i) => {
@@ -23,7 +25,7 @@ const QuestionInput = props => {
   const addAnswer = e => setNbOfAnswers(nbOfAnswers + 1);
 
   const deleteAnswer = () => {
-    console.log("toto");
+    setNbOfAnswers(nbOfAnswers - 1);
   };
 
   const displayAnswers = useMemo(() => {
@@ -31,20 +33,25 @@ const QuestionInput = props => {
     console.log("nbOfAnswers", nbOfAnswers);
     const answersInputs = [];
     for (let i = 0; i < nbOfAnswers; i++) {
-      console.log("i", i);
       answersInputs.push(
-        <div className="relative">
+        <div className="relative" key={`container_${props.num}_${i + 1}`}>
+          <input
+            type="checkbox"
+            className="checkbox-qcm"
+            name={`q${props.num}_ans${i + 1}`}
+            key={`q${props.num}_ans${i + 1}`}
+          />
           <CustomInput
             type="text"
-            name={`q${props.num}_ans${i + 1}`}
-            key={i}
+            name={`q${props.num}_rep${i + 1}`}
+            key={`q${props.num}_rep${i + 1}`}
             update={e => updateAnswer(e, i)}
             value={answers[i]}
             placeholder={`Réponse ${i + 1}`}
             color="grey"
             className="ct-input"
           />
-          <i className="fas fa-minus" onClick={deleteAnswer}></i>
+          <i className="fas fa-minus" onClick={deleteAnswer} id={`${i}`}></i>
         </div>
       );
     }
@@ -61,6 +68,16 @@ const QuestionInput = props => {
           value={question}
           placeholder="Question"
           name={"question" + props.num}
+          color="grey"
+          className="ct-input"
+        />
+        <CustomInput
+          type="text"
+          key={"advice" + props.num}
+          update={updateAdvice}
+          value={advice}
+          placeholder="Conseil"
+          name={`q${props.num}_advice`}
           color="grey"
           className="ct-input"
         />
