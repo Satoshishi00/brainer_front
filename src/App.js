@@ -27,7 +27,9 @@ import addQcm from "modules/Qcms/CreateQcm";
 
 import FlashCards from "modules/Flashcards/FlashCardsList";
 import TakeFlashCards from "modules/Flashcards/TakeFlashCards";
-import CreateFlashCards from "modules/Flashcards/CreateFlashCards";
+import HowCreateFlashCards from "modules/Flashcards/HowCeateFlashCards"
+import CreateFcWithText from "modules/Flashcards/CreateFcWithText";
+import CreateFcWithPhoto from "modules/Flashcards/CreateFcWithPhoto";
 
 import ClassroomList from "modules/Classroom/ClassroomList";
 import MakeClassroom from "modules/Classroom/MakeClassroom";
@@ -59,7 +61,9 @@ const App = () => (
 
           <MyRoute path="/flashcards/:id?" component={TakeFlashCards} />
           <MyRoute path="/flashcardsList" component={FlashCards} />
-          <MyRoute path="/addFlashcards" component={CreateFlashCards} logged />
+          <MyRoute path="/createFcHome" component={HowCreateFlashCards} logged />
+          <MyRoute path="/createFcText" component = {CreateFcWithText} logged />
+          <MyRoute path="/createFcPhoto" component = {CreateFcWithPhoto} logged />
 
 
           <MyRoute path="/classroomList" component={ClassroomList} logged/>

@@ -60,7 +60,7 @@ const FlashCards = () => {
 
       <div className="qcms-container">
         {cookies.user_id && (
-          <Link to="addFlashcards">
+          <Link to="createFcHome">
             <ButtonPrimary className="btn-qdd-qcm">Créer</ButtonPrimary>
           </Link>
         )}
