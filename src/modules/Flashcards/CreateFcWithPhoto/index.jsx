@@ -7,6 +7,7 @@ import FlashcardInputPhoto from "components/FlashcardInputPhoto";
 
 import { Redirect } from "react-router-dom";
 
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ButtonSuccess from "components/StyledButtons/ButtonSuccess";
 
@@ -60,10 +61,11 @@ const CreateFcWithPhoto = () => {
         console.log(error);
       } else {
         console.log("FC ajoutée");
+        toast.success("Votre Deck '" + fcName + "' a bien été créé");
         setFcCreated(true);
       }
     },
-    [error]
+    [error, fcName]
   );
 
   const createFc = e => {

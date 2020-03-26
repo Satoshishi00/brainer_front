@@ -7,6 +7,7 @@ import QuestionInput from "components/QuestionInput";
 
 import { Redirect } from "react-router-dom";
 
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ButtonSuccess from "components/StyledButtons/ButtonSuccess";
 
@@ -79,7 +80,6 @@ const CreateQcm = () => {
           console.log(false);
           URL += "&q" + i + "_ans" + j + "=false";
         }
-        // console.log(form.get("q" + i + "_ans" + j));
         j++;
       }
     }
@@ -110,10 +110,11 @@ const CreateQcm = () => {
         console.log(error);
       } else {
         console.log("QCM ajoutée");
+        toast.success("Votre Deck '" + qcmName + "' a bien été créé");
         setQcmCreated(true);
       }
     },
-    [error]
+    [error, qcmName]
   );
 
   return (
