@@ -5,6 +5,8 @@ import ButtonPrimary from "components/StyledButtons/ButtonPrimary";
 import CustomInput from "components/CustomInput";
 import FlashcardInput from "components/FlashcardInput";
 
+import { useHistory, Redirect } from "react-router-dom";
+
 import "react-toastify/dist/ReactToastify.css";
 import ButtonSuccess from "components/StyledButtons/ButtonSuccess";
 
@@ -18,6 +20,7 @@ const CreateFlashCards = () => {
   const [error, setError] = useState("");
   const [cardNumber, setCardNumber] = useState(1);
   const [cards, setCards] = useState([]);
+  const [fcCreated, setFcCreated] = useState(false);
 
   useEffect(() => {
     addCard();
@@ -57,19 +60,11 @@ const CreateFlashCards = () => {
         console.log(error);
       } else {
         console.log("FC ajoutée");
+        setFcCreated(true);
       }
     },
     [error]
   );
-
-  //   useEffect(() => {
-  //     const URL =
-  //       "http://api.brainers.xyz:80/flashCards/new?recto_type=text&verso_type=text";
-  //     fetch(URL, { method: "POST" })
-  //       .then(response => response.json())
-  //       .then(buildList)
-  //       .catch(console.log("error AJAX request"));
-  //   }, []);
 
   const createFc = e => {
     let form = new FormData(e.target);
@@ -82,10 +77,6 @@ const CreateFlashCards = () => {
       rectoName +
       "&verso_name=" +
       versoName;
-    for (let i = 1; i < cardNumber; i++) {
-      URL = URL + "&card_recto_" + i + "=" + form.get("card_recto_" + i);
-      URL = URL + "&card_verso_" + i + "=" + form.get("card_verso_" + i);
-    }
     console.log(URL);
     fetch(URL, {
       method: "POST",
@@ -94,10 +85,8 @@ const CreateFlashCards = () => {
         pepper: cookies.brainer_pepper,
         security: "true",
         Accept: "application/json; odata=verbose"
-      }
-      //   body: JSON.stringify({
-      //     form
-      //   });
+      },
+      body: form
     })
       .then(response => response.json())
       .then(buildList)
@@ -154,6 +143,7 @@ const CreateFlashCards = () => {
 
         <ButtonPrimary id="btn-create-qcm">Fabriquer</ButtonPrimary>
       </form>
+      {fcCreated && <Redirect to="/flashcardsList" push />}
     </div>
   );
 };

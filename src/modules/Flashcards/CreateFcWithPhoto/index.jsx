@@ -5,6 +5,8 @@ import ButtonPrimary from "components/StyledButtons/ButtonPrimary";
 import CustomInput from "components/CustomInput";
 import FlashcardInputPhoto from "components/FlashcardInputPhoto";
 
+import { Redirect } from "react-router-dom";
+
 import "react-toastify/dist/ReactToastify.css";
 import ButtonSuccess from "components/StyledButtons/ButtonSuccess";
 
@@ -18,6 +20,7 @@ const CreateFcWithPhoto = () => {
   const [error, setError] = useState("");
   const [cardNumber, setCardNumber] = useState(1);
   const [cards, setCards] = useState([]);
+  const [fcCreated, setFcCreated] = useState(false);
 
   useEffect(() => {
     addCard();
@@ -57,6 +60,7 @@ const CreateFcWithPhoto = () => {
         console.log(error);
       } else {
         console.log("FC ajoutée");
+        setFcCreated(true);
       }
     },
     [error]
@@ -64,7 +68,7 @@ const CreateFcWithPhoto = () => {
 
   const createFc = e => {
     let form = new FormData(e.target);
-    // form = new URLSearchParams(form);
+
     e.preventDefault();
     console.log(form);
     let URL =
@@ -74,10 +78,7 @@ const CreateFcWithPhoto = () => {
       rectoName +
       "&verso_name=" +
       versoName;
-    // for (let i = 1; i < cardNumber; i++) {
-    //   URL = URL + "&card_recto_" + i + "=" + form.get("card_recto_" + i);
-    //   URL = URL + "&card_verso_" + i + "=" + form.get("card_verso_" + i);
-    // }
+
     console.log(URL);
     fetch(URL, {
       method: "POST",
@@ -144,6 +145,7 @@ const CreateFcWithPhoto = () => {
 
         <ButtonPrimary id="btn-create-qcm">Fabriquer</ButtonPrimary>
       </form>
+      {fcCreated && <Redirect to="/flashcardsList" push />}
     </div>
   );
 };

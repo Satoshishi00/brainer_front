@@ -5,6 +5,8 @@ import ButtonPrimary from "components/StyledButtons/ButtonPrimary";
 import CustomInput from "components/CustomInput";
 import QuestionInput from "components/QuestionInput";
 
+import { Redirect } from "react-router-dom";
+
 import "react-toastify/dist/ReactToastify.css";
 import ButtonSuccess from "components/StyledButtons/ButtonSuccess";
 
@@ -17,6 +19,7 @@ const CreateQcm = () => {
   const [qcmDescription, setQcmDescription] = useState("");
   const [questionNumber, setQuestionNumber] = useState(1);
   const [questions, setQuestions] = useState([]);
+  const [qcmCreated, setQcmCreated] = useState(false);
 
   useEffect(() => {
     addQuestion();
@@ -107,6 +110,7 @@ const CreateQcm = () => {
         console.log(error);
       } else {
         console.log("QCM ajoutée");
+        setQcmCreated(true);
       }
     },
     [error]
@@ -155,6 +159,7 @@ const CreateQcm = () => {
 
         <ButtonPrimary id="btn-create-qcm">Fabriquer</ButtonPrimary>
       </form>
+      {qcmCreated && <Redirect to="/qcmList" push />}
     </div>
   );
 };
