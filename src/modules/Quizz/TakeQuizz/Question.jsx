@@ -1,19 +1,12 @@
 import React, { useState, useCallback, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-const checkLabel = () => {
-  for (let i = 1; i <= 4; i++) {
-    document
-      .getElementById("answer_" + i)
-      .addEventListener("click", function() {
-        for (let j = 1; j <= 4; j++) {
-          document.getElementById("answer_" + j).style.backgroundColor =
-            "white";
-        }
-        document.getElementById("answer_" + i).style.backgroundColor =
-          "#f6b93b";
-      });
+const checkLabel = e => {
+  console.log("e", e.target);
+  for (let j = 1; j <= 4; j++) {
+    document.getElementById("answer_" + j).style.backgroundColor = "white";
   }
+  e.target.style.backgroundColor = "#f6b93b";
 };
 
 const Question = ({ quizz, question }) => {

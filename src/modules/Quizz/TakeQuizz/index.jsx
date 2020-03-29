@@ -17,7 +17,6 @@ const TakeQuizz = () => {
   const [cardsDone, setCardsDone] = useState(new FormData());
   const [isFinish, setIsFinish] = useState(false);
   const [lastAnswer, setLastAnswer] = useState("");
-  const [downRed, setDownRed] = useState(0);
   const [nbGoodAnswer, setNbGoodAnswer] = useState(0);
   const [theAnswer, setTheAnswer] = useState();
   const [showResponse, setShowResponse] = useState(false);
@@ -29,7 +28,6 @@ const TakeQuizz = () => {
 
   const buildList = useCallback(
     data => {
-      console.log(data.error);
       if (typeof data.error !== "undefined" && data.error) {
         const error = data.error;
         console.log(error);
@@ -40,60 +38,27 @@ const TakeQuizz = () => {
         setIsFinish(data.finish);
         if (quizz) {
           question.right_answer = data.right_answer;
-          console.log("question", data.right_answer);
           setLastQuestion(question);
           setLastAnswer(data.right_answer);
           setShowResponse(true);
-          console.log("on a quelque chose après isfinish");
         }
       } else {
         setQuizz(data[0]);
         setQuestion(data[1]);
         setLastQuestion(data[2]);
 
-        console.log("theAnswer", theAnswer);
-        console.log("right_answer", data[2].right_answer);
         if (data[2].question_id) {
           setShowResponse(true);
-          if (theAnswer === data[2].right_answer) {
-            //setNbGoodAnswer(nbGoodAnswer + 1);
-            // nbGoodAnswer === 0
-            //   ? setNbGoodAnswer(1)
-            //   : setNbGoodAnswer(nbGoodAnswer + 1);
-            // console.log("nbGoodAnswer =", nbGoodAnswer);
-          }
         }
         //Remplissage de la liste des cartes qui ont été faites
-        console.log(data[0]);
-        console.log(data[1]);
-        console.log(data[2]);
-
-        console.log(quizz);
-        console.log(question);
-        console.log(lastQuestion);
         cardsDone.append("quizz", parseInt(data[1].question_id, 10));
         cardsDone.append("result", cardsDone.getAll("quizz"));
         setCardsDone(cardsDone);
       }
-      console.log(showResponse);
 
       setLoading(false);
-      //   clearResponses();
-      console.log(showResponse);
-      console.log("nb_good_answer", nbGoodAnswer);
-
-      //colorGoodAnswer();
-      //   setClickIsActive(true);
     },
-    [
-      cardsDone,
-      quizz,
-      question,
-      lastQuestion,
-      showResponse,
-      theAnswer,
-      nbGoodAnswer
-    ]
+    [cardsDone, quizz, question]
   );
 
   useEffect(() => {
@@ -121,13 +86,9 @@ const TakeQuizz = () => {
     let form = new FormData(e.target);
     e.preventDefault();
 
-    console.log("j'envoie le form");
-    console.log("cards_done", cardsDone.get("result"));
-    console.log("answer = ", form.get("answer"));
     setTheAnswer(parseInt(form.get("answer")));
     const curent_url = window.location.href;
     const id_quizz = curent_url.split("/")[4];
-    console.log("id_quizz", id_quizz);
     const URL =
       "http://api.brainers.xyz:80/quizz/" + id_quizz + "/getRandomQuestion";
     fetch(URL, {
@@ -216,11 +177,9 @@ const TakeQuizz = () => {
           <h1 className="">Résultats</h1>
           <div className="flex fd-column fs-1 ">
             <div className="up-cards">
-              Cartes validées{" "}
-              <span className="bold color-green">{nbGoodAnswer}</span>
-            </div>
-            <div className="down-cards">
-              Cartes manquées <span className="bold color-red">{downRed}</span>
+              Bonnes réponses{" "}
+              <span className="bold color-green">{nbGoodAnswer}</span>/
+              {quizz.nb_questions}
             </div>
             <Link className="btn-link" to="/quizzList">
               Quizz

@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 
 const Response = ({ quizz, lastQuestion, theAnswer, lastAnswer }) => {
   //Soit on a une image au recto et du texte au verso
-  console.log("theAnswer", theAnswer);
-  console.log("right_answer", lastQuestion.right_answer);
 
   return (
     <div>
