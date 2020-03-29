@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Categories = () => (
   <div className="flex mg-b pd-b ovf-x">
-    <Link className="link color-grey flex-weight" to="/qcmList">
+    <Link className="link color-grey flex-weight" to="/quizzList">
       <div className="box-img-text flex fd-column">
         <span className="img-in-box">
           <i className="fas fa-question"></i>

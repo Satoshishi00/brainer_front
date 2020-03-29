@@ -42,6 +42,7 @@ const TakeFlashCards = () => {
         cardsDone.append("fc", parseInt(data[1].card_id, 10));
         cardsDone.append("result", cardsDone.getAll("fc"));
         setCardsDone(cardsDone);
+        console.log(cardsDone);
       }
 
       setLoading(false);

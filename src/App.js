@@ -25,6 +25,10 @@ import Qcm from "modules/Qcms/QcmList";
 import TakeQcm from "modules/Qcms/TakeQcm";
 import addQcm from "modules/Qcms/CreateQcm";
 
+import Quizz from "modules/Quizz/QuizzList";
+import TakeQuizz from "modules/Quizz/TakeQuizz";
+import addQuizz from "modules/Quizz/CreateQuizz"
+
 import FlashCards from "modules/Flashcards/FlashCardsList";
 import TakeFlashCards from "modules/Flashcards/TakeFlashCards";
 import HowCreateFlashCards from "modules/Flashcards/HowCeateFlashCards"
@@ -58,6 +62,10 @@ const App = () => (
           <MyRoute path="/qcmList" component={Qcm} />
           <MyRoute path="/qcm/:id?" component={TakeQcm} />
           <MyRoute path="/addQcm" component={addQcm} logged />
+
+          <MyRoute path="/quizzList" component={Quizz} />
+          <MyRoute path="/quizz/:id?" component={TakeQuizz} />
+          <MyRoute path="/addQuizz" component={addQuizz} logged />
 
           <MyRoute path="/flashcards/:id?" component={TakeFlashCards} />
           <MyRoute path="/flashcardsList" component={FlashCards} />

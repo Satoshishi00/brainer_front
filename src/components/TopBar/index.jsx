@@ -75,6 +75,12 @@ const TopBar = () => {
           </Link>
           <Link
             className="link topbar-item-container flex center"
+            to="/quizzList"
+          >
+            <span className="topbar-item center">Quizz</span>
+          </Link>
+          <Link
+            className="link topbar-item-container flex center"
             to="/flashcardsList"
           >
             <span className="topbar-item center">FC</span>
