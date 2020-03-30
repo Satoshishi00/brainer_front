@@ -1,5 +1,4 @@
-import React, { useState, useCallback, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
 
 const toggle = e => {
   e.preventDefault();

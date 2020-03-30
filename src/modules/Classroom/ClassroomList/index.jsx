@@ -11,11 +11,7 @@ const ClassroomList = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [classes, setClasses] = useState([]);
-  const [cookies, setCookie] = useCookies([
-    "brainer_id",
-    "brainer_pepper",
-    "user_id"
-  ]);
+  const [cookies] = useCookies(["brainer_id", "brainer_pepper", "user_id"]);
 
   const buildList = useCallback(
     data => {
@@ -27,7 +23,7 @@ const ClassroomList = () => {
       }
       setLoading(false);
     },
-    [classes, loading]
+    [error]
   );
 
   useEffect(() => {

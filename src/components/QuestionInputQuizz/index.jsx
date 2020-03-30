@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useMemo } from "react";
+import React, { useState, useCallback, useMemo } from "react";
 
 import StyledContainerInput from "components/ContainerInput";
 import CustomInput from "components/CustomInput";
@@ -8,8 +8,9 @@ import "react-toastify/dist/ReactToastify.css";
 const QuestionInputQuizz = props => {
   const [question, setQuestion] = useState("");
   const [advice, setAdvice] = useState("");
-  const [nbOfAnswers, setNbOfAnswers] = useState(4);
   const [answers, setAnswers] = useState([]);
+
+  const nbOfAnswers = 4;
 
   const updateQuestion = useCallback(e => setQuestion(e.target.value), []);
   const updateAdvice = useCallback(e => setAdvice(e.target.value), []);
@@ -22,11 +23,7 @@ const QuestionInputQuizz = props => {
     [answers]
   );
 
-  const addAnswer = e => setNbOfAnswers(nbOfAnswers + 1);
-
   const displayAnswers = useMemo(() => {
-    console.log("displayAnswer", "pass");
-    console.log("nbOfAnswers", nbOfAnswers);
     const answersInputs = [];
     for (let i = 0; i < nbOfAnswers; i++) {
       answersInputs.push(
@@ -53,7 +50,7 @@ const QuestionInputQuizz = props => {
       );
     }
     return answersInputs;
-  }, [nbOfAnswers, updateAnswer, answers]);
+  }, [updateAnswer, answers, props]);
 
   return (
     <div id={"question-html-" + props.num}>

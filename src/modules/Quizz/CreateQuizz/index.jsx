@@ -14,7 +14,7 @@ import ButtonSuccess from "components/StyledButtons/ButtonSuccess";
 import { useCookies } from "react-cookie";
 
 const CreateQuizz = () => {
-  const [cookies, setCookie] = useCookies(["brainer_id", "brainer_spepper"]);
+  const [cookies] = useCookies(["brainer_id", "brainer_spepper"]);
   const [error, setError] = useState("");
   const [quizzName, setQuizzName] = useState("");
   const [quizzDescription, setQuizzDescription] = useState("");

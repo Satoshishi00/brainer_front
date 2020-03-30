@@ -23,7 +23,7 @@ const FlashcardInputPhoto = props => {
           break;
       }
     },
-    [setRecto, setVerso]
+    [setRecto, setVerso, props]
   );
 
   return (

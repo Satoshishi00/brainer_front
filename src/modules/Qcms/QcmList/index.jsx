@@ -10,24 +10,17 @@ import Qcm from "./Qcm";
 const QcmList = () => {
   const [loading, setLoading] = useState(true);
   const [qcms, setQcms] = useState([]);
-  const [cookies, setCookie] = useCookies([
-    "brainer_id",
-    "brainer_spepper",
-    "user_id"
-  ]);
+  const [cookies] = useCookies(["brainer_id", "brainer_spepper", "user_id"]);
 
-  const buildList = useCallback(
-    data => {
-      if (typeof data.error !== undefined && data.error) {
-        const error = data.error;
-        console.log(error);
-      } else {
-        setQcms(data);
-      }
-      setLoading(false);
-    },
-    [qcms, loading]
-  );
+  const buildList = useCallback(data => {
+    if (typeof data.error !== undefined && data.error) {
+      const error = data.error;
+      console.log(error);
+    } else {
+      setQcms(data);
+    }
+    setLoading(false);
+  }, []);
 
   useEffect(() => {
     const URL =

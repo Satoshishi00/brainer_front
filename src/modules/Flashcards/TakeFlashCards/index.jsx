@@ -17,12 +17,7 @@ const TakeFlashCards = () => {
   const [upGreen, setUpGreen] = useState(0);
   const [downRed, setDownRed] = useState(0);
   const [clickIsActive, setClickIsActive] = useState(false);
-  const [infosResult, setInfosResult] = useState(new FormData());
-  const [cookies, setCookie] = useCookies([
-    "brainer_id",
-    "brainer_spepper",
-    "user_id"
-  ]);
+  const [cookies] = useCookies(["brainer_id", "brainer_spepper", "user_id"]);
 
   const buildList = useCallback(
     data => {

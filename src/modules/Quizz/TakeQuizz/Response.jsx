@@ -1,5 +1,4 @@
-import React, { useState, useCallback, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
 
 const Response = ({ quizz, lastQuestion, theAnswer, lastAnswer }) => {
   //Soit on a une image au recto et du texte au verso

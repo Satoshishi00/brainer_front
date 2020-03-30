@@ -4,7 +4,6 @@ import Loader from "components/Loader";
 import { useCookies } from "react-cookie";
 
 import ButtonPrimary from "components/StyledButtons/ButtonPrimary";
-import ButtonDanger from "components/StyledButtons/ButtonDanger";
 
 import Response from "./Response";
 import Question from "./Question";
@@ -20,11 +19,7 @@ const TakeQuizz = () => {
   const [nbGoodAnswer, setNbGoodAnswer] = useState(0);
   const [theAnswer, setTheAnswer] = useState();
   const [showResponse, setShowResponse] = useState(false);
-  const [cookies, setCookie] = useCookies([
-    "brainer_id",
-    "brainer_spepper",
-    "user_id"
-  ]);
+  const [cookies] = useCookies(["brainer_id", "brainer_spepper", "user_id"]);
 
   const buildList = useCallback(
     data => {
@@ -175,7 +170,7 @@ const TakeQuizz = () => {
         <h2 className="center">Vous avez fini le Quizz</h2>
         <div id="fc-result" className="center">
           <h1 className="">Résultats</h1>
-          <div className="flex fd-column fs-1 ">
+          <div className="flex fd-column fs-1 mg-b">
             <div className="up-cards">
               Bonnes réponses{" "}
               <span className="bold color-green">{nbGoodAnswer}</span>/
@@ -186,11 +181,20 @@ const TakeQuizz = () => {
                 <span className="msg_result_quizz color-green">
                   Féliciations
                 </span>
-                <img
-                  src="/assets/images/smiley_happy.jpg"
-                  alt="Smiley happy"
-                  width="250"
-                />
+                <lottie-player
+                  src="https://assets10.lottiefiles.com/packages/lf20_b7rQjC.json"
+                  background="transparent"
+                  speed="1"
+                  class="confettis"
+                  autoplay
+                ></lottie-player>
+                <lottie-player
+                  src="https://assets3.lottiefiles.com/datafiles/c5zgFUko8JLl7Vp/data.json"
+                  background="transparent"
+                  speed="1"
+                  class="animation_smiley"
+                  autoplay
+                ></lottie-player>
               </div>
             )) ||
               (nbGoodAnswer / quizz.nb_questions > 0.6 && (
@@ -207,14 +211,24 @@ const TakeQuizz = () => {
                   <span className="msg_result_quizz color-red">
                     Essaie encore
                   </span>
-                  <img
+                  {/* <img
                     src="/assets/images/smiley_confused.jpg"
                     alt="Smiley confused"
                     width="250"
-                  />
+                  /> */}
+                  <lottie-player
+                    src="https://assets5.lottiefiles.com/packages/lf20_rxXOrZ.json"
+                    background="transparent"
+                    speed="1"
+                    class="animation_smiley"
+                    autoplay
+                  ></lottie-player>
                 </div>
               )}
             {console.log(nbGoodAnswer / quizz.nb_questions)}
+            <Link className="btn-link" to={`/quizz/${quizz.quizz_id}`}>
+              Refaire
+            </Link>
             <Link className="btn-link" to="/quizzList">
               Quizz
             </Link>

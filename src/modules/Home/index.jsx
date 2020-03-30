@@ -11,11 +11,7 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
   const [qcms, setQcms] = useState([]);
   const [error, setError] = useState("");
-  const [cookies, setCookie] = useCookies([
-    "brainer_id",
-    "brainer_spepper",
-    "user_id"
-  ]);
+  const [cookies] = useCookies(["brainer_id", "brainer_spepper", "user_id"]);
 
   const buildList = useCallback(
     data => {

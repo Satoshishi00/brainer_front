@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback, useMemo } from "react";
+import React, { useState, useCallback, useMemo } from "react";
 
 import StyledContainerInput from "components/ContainerInput";
 import CustomInput from "components/CustomInput";

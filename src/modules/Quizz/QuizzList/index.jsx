@@ -10,11 +10,7 @@ import Quizz from "./Quizz";
 const QuizzList = () => {
   const [loading, setLoading] = useState(true);
   const [quizzs, setQuizzs] = useState([]);
-  const [cookies, setCookie] = useCookies([
-    "brainer_id",
-    "brainer_spepper",
-    "user_id"
-  ]);
+  const [cookies] = useCookies(["brainer_id", "brainer_spepper", "user_id"]);
 
   const buildList = useCallback(
     data => {

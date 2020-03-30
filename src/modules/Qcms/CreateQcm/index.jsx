@@ -14,17 +14,13 @@ import ButtonSuccess from "components/StyledButtons/ButtonSuccess";
 import { useCookies } from "react-cookie";
 
 const CreateQcm = () => {
-  const [cookies, setCookie] = useCookies(["brainer_id", "brainer_spepper"]);
+  const [cookies] = useCookies(["brainer_id", "brainer_spepper"]);
   const [error, setError] = useState("");
   const [qcmName, setQcmName] = useState("");
   const [qcmDescription, setQcmDescription] = useState("");
   const [questionNumber, setQuestionNumber] = useState(1);
   const [questions, setQuestions] = useState([]);
   const [qcmCreated, setQcmCreated] = useState(false);
-
-  useEffect(() => {
-    addQuestion();
-  }, []);
 
   const update = useCallback(
     (e, { name, value }) => {
@@ -51,6 +47,10 @@ const CreateQcm = () => {
 
     setQuestionNumber(questionNumber + 1);
   };
+
+  useEffect(() => {
+    addQuestion();
+  }, []);
 
   const createQcm = e => {
     let form = new FormData(e.target);

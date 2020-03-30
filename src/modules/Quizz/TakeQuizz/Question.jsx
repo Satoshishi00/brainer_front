@@ -1,5 +1,4 @@
-import React, { useState, useCallback, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
 
 const checkLabel = e => {
   console.log("e", e.target);

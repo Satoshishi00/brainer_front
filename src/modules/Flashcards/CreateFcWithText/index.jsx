@@ -5,7 +5,7 @@ import ButtonPrimary from "components/StyledButtons/ButtonPrimary";
 import CustomInput from "components/CustomInput";
 import FlashcardInput from "components/FlashcardInput";
 
-import { useHistory, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -14,7 +14,7 @@ import ButtonSuccess from "components/StyledButtons/ButtonSuccess";
 import { useCookies } from "react-cookie";
 
 const CreateFlashCards = () => {
-  const [cookies, setCookie] = useCookies(["brainer_id", "brainer_spepper"]);
+  const [cookies] = useCookies(["brainer_id", "brainer_spepper"]);
   const [fcName, setFcName] = useState("");
   const [rectoName, setRectoName] = useState("");
   const [versoName, setVersoName] = useState("");

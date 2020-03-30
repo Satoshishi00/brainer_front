@@ -1,13 +1,10 @@
-import React, { useState, useCallback, useEffect } from "react";
-import { Link } from "react-router-dom";
-import Loader from "components/Loader";
+import React, { useState, useCallback } from "react";
 
 import { useCookies } from "react-cookie";
 
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import ButtonPrimary from "components/StyledButtons/ButtonPrimary";
 import ButtonSuccess from "components/StyledButtons/ButtonSuccess";
 
 import CustomInput from "components/CustomInput";

@@ -14,7 +14,7 @@ import ButtonSuccess from "components/StyledButtons/ButtonSuccess";
 import { useCookies } from "react-cookie";
 
 const CreateFcWithPhoto = () => {
-  const [cookies, setCookie] = useCookies(["brainer_id", "brainer_spepper"]);
+  const [cookies] = useCookies(["brainer_id", "brainer_spepper"]);
   const [fcName, setFcName] = useState("");
   const [rectoName, setRectoName] = useState("");
   const [versoName, setVersoName] = useState("");
