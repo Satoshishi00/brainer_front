@@ -225,10 +225,6 @@ const TakeQuizz = () => {
                   ></lottie-player>
                 </div>
               )}
-            {console.log(nbGoodAnswer / quizz.nb_questions)}
-            <Link className="btn-link" to={`/quizz/${quizz.quizz_id}`}>
-              Refaire
-            </Link>
             <Link className="btn-link" to="/quizzList">
               Quizz
             </Link>
