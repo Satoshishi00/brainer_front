@@ -84,7 +84,7 @@ input:focus {
     }
 
     .flashcards-card-item {
-        line-height: 9rem !important;
+        font-size: 1.5rem !important;
     }
 
     .points-comptor {
