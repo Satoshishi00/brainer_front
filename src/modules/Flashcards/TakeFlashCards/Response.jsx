@@ -25,7 +25,7 @@ const Response = ({ fc, card, upGreen, downRed }) => {
           className="absolute flashcards-card img-front"
         >
           <img
-            alt="image de la carte"
+            alt={card.card_verso}
             className="flashcards-card-item"
             src={"http://api.brainers.xyz:80/medias/images/" + card.card_recto}
           ></img>
@@ -47,7 +47,7 @@ const Response = ({ fc, card, upGreen, downRed }) => {
   } else {
     return (
       <div className="flashcards-cards-container">
-        <div className="center bold points-comptor points-red">0</div>
+        <div className="center bold points-comptor points-red">{downRed}</div>
         <div
           onClick={toggle}
           id="recto"
@@ -67,7 +67,7 @@ const Response = ({ fc, card, upGreen, downRed }) => {
             {card.card_verso}
           </h3>
         </div>
-        <div className="center bold points-comptor points-green">0</div>
+        <div className="center bold points-comptor points-green">{upGreen}</div>
       </div>
     );
   }

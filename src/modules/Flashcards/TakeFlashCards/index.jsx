@@ -24,7 +24,6 @@ const TakeFlashCards = () => {
       console.log(data.error);
       if (typeof data.error !== "undefined" && data.error) {
         const error = data.error;
-        console.log(error);
       } else if (data.logout) {
         console.log("On se déconnecte");
         window.location.replace("http://www.brainers.xyz:80/signin");
@@ -37,7 +36,6 @@ const TakeFlashCards = () => {
         cardsDone.append("fc", parseInt(data[1].card_id, 10));
         cardsDone.append("result", cardsDone.getAll("fc"));
         setCardsDone(cardsDone);
-        console.log(cardsDone);
       }
 
       setLoading(false);
@@ -121,42 +119,35 @@ const TakeFlashCards = () => {
     verso.toggle("img-back");
   };
 
-  const sendFcResponse = () => {
-    console.log("On envoie les réponses");
-    let test = new FormData();
+  // const sendFcResponse = () => {
+  //   let test = new FormData();
 
-    test.append(
-      "nb_good_rep",
-      document.getElementsByClassName("points-green")[0].innerHTML
-    );
-    test.append("user_id", cookies.user_id);
-    console.log(test);
-    console.log("user_id", test.get("user_id"));
-    console.log("nb_good_rep", test.get("nb_good_rep"));
+  //   test.append(
+  //     "nb_good_rep",
+  //     document.getElementsByClassName("points-green")[0].innerHTML
+  //   );
+  //   test.append("user_id", cookies.user_id);
 
-    const curent_url = window.location.href;
-    const id_fc = curent_url.split("/")[5];
-    console.log("toto");
-    const URL =
-      "http://api.brainers.xyz:80/flashCards/" +
-      id_fc +
-      "/getInformationsAfterAnswering";
+  //   const curent_url = window.location.href;
+  //   const id_fc = curent_url.split("/")[5];
+  //   const URL =
+  //     "http://api.brainers.xyz:80/flashCards/" +
+  //     id_fc +
+  //     "/getInformationsAfterAnswering";
 
-    fetch(URL, {
-      method: "POST",
-      headers: {
-        id: cookies.brainer_id,
-        pepper: cookies.brainer_pepper,
-        security: "false",
-        Accept: "application/json; odata=verbose"
-      },
-      body: test
-    })
-      .then(response => response.json())
-      .catch(error => console.log("error api fetch", error));
-
-    console.log("titi");
-  };
+  //   fetch(URL, {
+  //     method: "POST",
+  //     headers: {
+  //       id: cookies.brainer_id,
+  //       pepper: cookies.brainer_pepper,
+  //       security: "false",
+  //       Accept: "application/json; odata=verbose"
+  //     },
+  //     body: test
+  //   })
+  //     .then(response => response.json())
+  //     .catch(error => console.log("error api fetch", error));
+  // };
 
   if (!isFinish) {
     return (

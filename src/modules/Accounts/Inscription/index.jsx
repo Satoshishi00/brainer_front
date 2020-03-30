@@ -130,7 +130,11 @@ const Inscription = ({ history }) => {
           <span className="fb-color">Facebook</span>
         </ButtonBlank>
         <ButtonBlank className="mg-l">
-          <img src="/logo-google.png" alt="" className="logo-google mg-r" />
+          <img
+            src="assets/images/logo-google.png"
+            alt="logo google"
+            className="logo-google mg-r"
+          />
           <span>Google</span>
         </ButtonBlank>
       </div>

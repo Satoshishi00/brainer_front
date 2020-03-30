@@ -139,7 +139,7 @@ const Connection = ({ history }) => {
         <ButtonBlank className="mg-l">
           <img
             src="/assets/images/logo-google.png"
-            alt=""
+            alt="logo google"
             className="logo-google mg-r"
           />
           <span>Google</span>
