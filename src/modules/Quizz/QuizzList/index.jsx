@@ -12,18 +12,15 @@ const QuizzList = () => {
   const [quizzs, setQuizzs] = useState([]);
   const [cookies] = useCookies(["brainer_id", "brainer_spepper", "user_id"]);
 
-  const buildList = useCallback(
-    data => {
-      if (typeof data.error !== undefined && data.error) {
-        const error = data.error;
-        console.log(error);
-      } else {
-        setQuizzs(data);
-      }
-      setLoading(false);
-    },
-    [quizzs, loading]
-  );
+  const buildList = useCallback(data => {
+    if (typeof data.error !== undefined && data.error) {
+      const error = data.error;
+      console.log(error);
+    } else {
+      setQuizzs(data);
+    }
+    setLoading(false);
+  }, []);
 
   useEffect(() => {
     const URL =
