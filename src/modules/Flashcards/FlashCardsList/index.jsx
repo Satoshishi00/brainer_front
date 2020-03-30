@@ -24,18 +24,15 @@ const FlashCards = () => {
   const [cookies, setCookie] = useCookies(["brainer_id", "brainer_spepper"]);
 
   console.log("enter");
-  const buildList = useCallback(
-    data => {
-      if (typeof data.error !== undefined && data.error) {
-        const error = data.error;
-        console.log(error);
-      } else {
-        setCards(data);
-      }
-      setLoading(false);
-    },
-    [cards, loading]
-  );
+  const buildList = useCallback(data => {
+    if (typeof data.error !== undefined && data.error) {
+      const error = data.error;
+      console.log(error);
+    } else {
+      setCards(data);
+    }
+    setLoading(false);
+  }, []);
 
   useEffect(() => {
     const URL =
