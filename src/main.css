@@ -486,10 +486,12 @@ div.topbar-item-container .topbar-item {
 .flashcards-card-item {
     margin: 0;
     font-size: 2rem;
-    line-height: 12rem;
     width: 100%;
     text-align: center;
     border-radius: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .img-back {
