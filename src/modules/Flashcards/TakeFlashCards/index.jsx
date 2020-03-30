@@ -48,7 +48,7 @@ const TakeFlashCards = () => {
 
   useEffect(() => {
     const curent_url = window.location.href;
-    const id_fc = curent_url.split("/")[4];
+    const id_fc = curent_url.split("/")[5];
     const URL =
       "http://api.brainers.xyz:80/flashCards/" + id_fc + "/getRandomCard";
 
@@ -71,7 +71,7 @@ const TakeFlashCards = () => {
     e.preventDefault();
     if (!clickIsActive) {
       const curent_url = window.location.href;
-      const id_fc = curent_url.split("/")[4];
+      const id_fc = curent_url.split("/")[5];
       const URL =
         "http://api.brainers.xyz:80/flashCards/" + id_fc + "/getRandomCard";
 
@@ -135,7 +135,7 @@ const TakeFlashCards = () => {
     console.log("nb_good_rep", test.get("nb_good_rep"));
 
     const curent_url = window.location.href;
-    const id_fc = curent_url.split("/")[4];
+    const id_fc = curent_url.split("/")[5];
     console.log("toto");
     const URL =
       "http://api.brainers.xyz:80/flashCards/" +

@@ -43,7 +43,7 @@ const TakeQcm = () => {
 
   useEffect(() => {
     const curent_url = window.location.href;
-    const id_qcm = curent_url.split("/")[4];
+    const id_qcm = curent_url.split("/")[5];
     const URL = "http://api.brainers.xyz:80/qcm/" + id_qcm + "/result";
     fetch(URL, {
       method: "GET",

@@ -58,7 +58,7 @@ const TakeQuizz = () => {
 
   useEffect(() => {
     const curent_url = window.location.href;
-    const id_quizz = curent_url.split("/")[4];
+    const id_quizz = curent_url.split("/")[5];
     const URL =
       "http://api.brainers.xyz:80/quizz/" + id_quizz + "/getRandomQuestion";
 
@@ -83,7 +83,7 @@ const TakeQuizz = () => {
 
     setTheAnswer(parseInt(form.get("answer")));
     const curent_url = window.location.href;
-    const id_quizz = curent_url.split("/")[4];
+    const id_quizz = curent_url.split("/")[5];
     const URL =
       "http://api.brainers.xyz:80/quizz/" + id_quizz + "/getRandomQuestion";
     fetch(URL, {
