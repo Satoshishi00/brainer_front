@@ -128,7 +128,7 @@ const CreateFlashCards = () => {
             key="verso_name"
             update={update}
             value={versoName}
-            placeholder="Nom du Recto"
+            placeholder="Nom du Verso"
             name="verso_name"
             color="grey"
             className="ct-input"

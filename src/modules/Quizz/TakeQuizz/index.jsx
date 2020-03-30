@@ -181,6 +181,40 @@ const TakeQuizz = () => {
               <span className="bold color-green">{nbGoodAnswer}</span>/
               {quizz.nb_questions}
             </div>
+            {(nbGoodAnswer / quizz.nb_questions > 0.8 && (
+              <div className="flex fd-column centrage-horizontal">
+                <span className="msg_result_quizz color-green">
+                  Féliciations
+                </span>
+                <img
+                  src="/assets/images/smiley_happy.jpg"
+                  alt="Smiley happy"
+                  width="250"
+                />
+              </div>
+            )) ||
+              (nbGoodAnswer / quizz.nb_questions > 0.6 && (
+                <div className="flex fd-column centrage-horizontal">
+                  <span className="msg_result_quizz color-green">Bravo</span>
+                  <img
+                    src="/assets/images/smiley_happy.jpg"
+                    alt="Smiley happy"
+                    width="250"
+                  />
+                </div>
+              )) || (
+                <div className="flex fd-column centrage-horizontal">
+                  <span className="msg_result_quizz color-red">
+                    Essaie encore
+                  </span>
+                  <img
+                    src="/assets/images/smiley_confused.jpg"
+                    alt="Smiley confused"
+                    width="250"
+                  />
+                </div>
+              )}
+            {console.log(nbGoodAnswer / quizz.nb_questions)}
             <Link className="btn-link" to="/quizzList">
               Quizz
             </Link>

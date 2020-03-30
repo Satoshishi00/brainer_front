@@ -701,3 +701,13 @@ div.topbar-item-container .topbar-item {
     margin-top: 3rem;
 
 }
+
+.centrage-horizontal {
+    align-items: center;
+}
+
+.msg_result_quizz {
+    margin: 2rem;
+    font-size: 3rem;
+    font-weight: bold;
+}
