@@ -21,7 +21,7 @@ import Card from "./Card";
 const FlashCards = () => {
   const [loading, setLoading] = useState(true);
   const [cards, setCards] = useState([]);
-  const [cookies, setCookie] = useCookies(["brainer_id", "brainer_spepper"]);
+  const [cookies] = useCookies(["brainer_id", "brainer_spepper"]);
 
   console.log("enter");
   const buildList = useCallback(data => {
@@ -49,7 +49,7 @@ const FlashCards = () => {
       .then(response => response.json())
       .then(buildList)
       .catch(console.log("error AJAX request"));
-  }, []);
+  }, [buildList, cookies]);
 
   return (
     <div className="container">

@@ -37,7 +37,7 @@ const QuizzList = () => {
       .then(response => response.json())
       .then(buildList)
       .catch(console.log("error AJAX request"));
-  }, []);
+  }, [cookies, buildList]);
 
   return (
     <div className="container">

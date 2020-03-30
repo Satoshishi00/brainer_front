@@ -37,7 +37,7 @@ const QcmList = () => {
       .then(response => response.json())
       .then(buildList)
       .catch(console.log("error AJAX request"));
-  }, []);
+  }, [buildList, cookies]);
 
   return (
     <div className="container">
