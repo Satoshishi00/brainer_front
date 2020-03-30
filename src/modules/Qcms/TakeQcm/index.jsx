@@ -8,6 +8,7 @@ import checkIfUrlInString from "utils/checkIfUrlInString";
 import MakeLinkIfUrl from "components/MakeLinkIfUrl";
 
 import { useCookies } from "react-cookie";
+import { Link } from "react-router-dom";
 
 const TakeQcm = () => {
   const [loading, setLoading] = useState(true);
@@ -15,11 +16,7 @@ const TakeQcm = () => {
   const [qcm, setQcm] = useState([]);
   const [answers, setAnswers] = useState();
   const [isResult, setIsResult] = useState(false);
-  const [cookies, setCookie] = useCookies([
-    "brainer_id",
-    "brainer_spepper",
-    "user_id"
-  ]);
+  const [cookies] = useCookies(["brainer_id", "brainer_spepper", "user_id"]);
 
   const buildList = useCallback(
     data => {
@@ -120,7 +117,14 @@ const TakeQcm = () => {
       <h2 className="color-grey">{qcm.qcm_description}</h2>
       <form id="form" onSubmit={onSubmit}>
         <Loader loading={loading} render={renderQuestions} />
-        <ButtonPrimary>Envoyer</ButtonPrimary>
+
+        <div>
+          <Link className={`btn-link ${isResult || "none"}`} to="/qcmList">
+            Continuer
+          </Link>
+        </div>
+
+        {isResult || <ButtonPrimary>Envoyer</ButtonPrimary>}
       </form>
 
       <div className="qcms-container"></div>

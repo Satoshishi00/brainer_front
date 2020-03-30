@@ -7,8 +7,16 @@ const Response = ({ id, response, parent, good_answer, isResult, answers }) => {
   if (!isResult)
     return (
       <div>
-        <input type="checkbox" id={id} value={response} name={parent}></input>
-        <label htmlFor={response}>{response}</label>
+        <input
+          className="pointer"
+          type="checkbox"
+          id={id}
+          value={response}
+          name={parent}
+        ></input>
+        <label className="pointer" htmlFor={id}>
+          {response}
+        </label>
       </div>
     );
   //on récupère le contenue du tableau ici et pas plus tôt, pour ne pas avoir de conflit dans le cas où il est vide
@@ -21,7 +29,7 @@ const Response = ({ id, response, parent, good_answer, isResult, answers }) => {
           <input type="checkbox" id={id} value={response} name={parent}></input>
           <label
             className={good_answer ? "good_anwer bold" : "bad_answer bold"}
-            htmlFor={response}
+            htmlFor={id}
           >
             {response}
           </label>

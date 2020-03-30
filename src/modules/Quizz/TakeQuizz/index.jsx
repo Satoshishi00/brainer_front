@@ -179,7 +179,7 @@ const TakeQuizz = () => {
             {(nbGoodAnswer / quizz.nb_questions > 0.8 && (
               <div className="flex fd-column centrage-horizontal">
                 <span className="msg_result_quizz color-green">
-                  Féliciations
+                  Félicitations
                 </span>
                 <lottie-player
                   src="https://assets10.lottiefiles.com/packages/lf20_b7rQjC.json"
