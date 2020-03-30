@@ -77,6 +77,7 @@ const App = () => (
           <MyRoute path="/classroomList" component={ClassroomList} logged/>
           <MyRoute path="/makeClassroom" component={MakeClassroom} logged />
 
+          <MyRoute path="/" exact="true" component={Home}/>
           <MyRoute path="/" component={Landing} />
         </Switch>
       </CookiesProvider>
