@@ -11,6 +11,7 @@ const Fields = ({ update, state }) => {
       value={state[field.name]}
       placeholder={field.placeholder}
       name={field.name}
+      className="ct-input"
     />
   ));
 };
