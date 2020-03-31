@@ -2,8 +2,10 @@ html {
     height: 100%;
     --color-yellow: #f6b93b;
     --color-brown: #333333;
-    --color-green: #6cb400;
-    --color-red: #ed4445;
+    /* --color-green: #6cb400; */
+    --color-green: #9bec27;
+    /* --color-red: #ed4445; */
+    --color-red: #ff0000;
     --color-grey: #4b4b4b;
     --color-blue: #3578E5;
     --color-grey-light: #90949c;
@@ -288,6 +290,7 @@ input:focus {
     font-weight: bold;
     display: flex;
     align-items: center;
+    z-index: 100;
 }
 
 .topbar-item {

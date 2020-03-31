@@ -17,6 +17,7 @@ const TakeQuizz = () => {
   const [isFinish, setIsFinish] = useState(false);
   const [lastAnswer, setLastAnswer] = useState("");
   const [nbGoodAnswer, setNbGoodAnswer] = useState(0);
+  const [nbQuestionDone, setNbQuestionDone] = useState(1);
   const [theAnswer, setTheAnswer] = useState();
   const [showResponse, setShowResponse] = useState(false);
   const [cookies] = useCookies(["brainer_id", "brainer_spepper", "user_id"]);
@@ -108,7 +109,8 @@ const TakeQuizz = () => {
       setNbGoodAnswer(nbGoodAnswer + 1);
       console.log("nbGoodAnswer =", nbGoodAnswer);
     }
-  }, [nbGoodAnswer, theAnswer, lastQuestion]);
+    setNbQuestionDone(nbQuestionDone + 1);
+  }, [nbGoodAnswer, theAnswer, lastQuestion, nbQuestionDone]);
 
   if (showResponse) {
     //On affiche la réponse à la question précedente
@@ -119,7 +121,7 @@ const TakeQuizz = () => {
         <h2 className="color-grey">{quizz.quizz_description}</h2>
 
         <div className="remaining-cards">
-          {quizz.nb_questions - question.remaining}/{quizz.nb_questions}
+          {nbQuestionDone}/{quizz.nb_questions}
         </div>
 
         <div>
