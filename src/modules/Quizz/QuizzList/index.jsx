@@ -24,7 +24,7 @@ const QuizzList = () => {
 
   useEffect(() => {
     const URL =
-      "https://api.brainers.xyz:80/quizz/show/all?limit=16&page_number=1";
+      "https://api.brainers.xyz/quizz/show/all?limit=16&page_number=1";
     fetch(URL, {
       method: "POST",
       headers: {

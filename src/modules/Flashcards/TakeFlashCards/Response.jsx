@@ -27,7 +27,7 @@ const Response = ({ fc, card, upGreen, downRed }) => {
           <img
             alt={card.card_verso}
             className="flashcards-card-item"
-            src={"https://api.brainers.xyz:80/medias/images/" + card.card_recto}
+            src={"https://api.brainers.xyz/medias/images/" + card.card_recto}
           ></img>
         </div>
 

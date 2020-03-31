@@ -34,7 +34,7 @@ const MakeClassroom = ({ history }) => {
   const addClassroom = e => {
     e.preventDefault();
     const URL =
-      "https://api.brainers.xyz:80/classroom/new?group_name=" + groupName;
+      "https://api.brainers.xyz/classroom/new?group_name=" + groupName;
     fetch(URL, {
       method: "PUT",
       headers: {

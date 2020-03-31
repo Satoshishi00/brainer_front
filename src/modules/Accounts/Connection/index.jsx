@@ -73,10 +73,7 @@ const Connection = ({ history }) => {
   const signup = e => {
     e.preventDefault();
     const URL =
-      "https://api.brainers.xyz:80/login?email=" +
-      email +
-      "&password=" +
-      password;
+      "https://api.brainers.xyz/login?email=" + email + "&password=" + password;
     //const myHeaders = new Headers();
     //myHeaders.append("brainer-id", cookies.id);
     //myHeaders.append("brainer-pepper", cookies.pepper);

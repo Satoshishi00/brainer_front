@@ -21,7 +21,7 @@ const Home = () => {
         console.log(error);
       } else if (data.logout) {
         console.log("On se déconnecte");
-        window.location.replace("https://www.brainers.xyz:80/signin");
+        window.location.replace("https://www.brainers.xyz/signin");
       } else {
         console.log(data);
         setQcms(data);
@@ -32,8 +32,7 @@ const Home = () => {
   );
 
   useEffect(() => {
-    const URL =
-      "https://api.brainers.xyz:80/qcm/show/all?limit=6&page_number=1";
+    const URL = "https://api.brainers.xyz/qcm/show/all?limit=6&page_number=1";
     fetch(URL, {
       method: "GET",
       headers: {

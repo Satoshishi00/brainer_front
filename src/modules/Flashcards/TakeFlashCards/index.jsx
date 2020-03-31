@@ -26,7 +26,7 @@ const TakeFlashCards = () => {
         const error = data.error;
       } else if (data.logout) {
         console.log("On se déconnecte");
-        window.location.replace("https://www.brainers.xyz:80/signin");
+        window.location.replace("https://www.brainers.xyz/signin");
       } else if (data.finish) {
         setIsFinish(data.finish);
       } else {
@@ -48,7 +48,7 @@ const TakeFlashCards = () => {
     const curent_url = window.location.href;
     const id_fc = curent_url.split("/")[5];
     const URL =
-      "https://api.brainers.xyz:80/flashCards/" + id_fc + "/getRandomCard";
+      "https://api.brainers.xyz/flashCards/" + id_fc + "/getRandomCard";
 
     fetch(URL, {
       method: "POST",
@@ -71,7 +71,7 @@ const TakeFlashCards = () => {
       const curent_url = window.location.href;
       const id_fc = curent_url.split("/")[5];
       const URL =
-        "https://api.brainers.xyz:80/flashCards/" + id_fc + "/getRandomCard";
+        "https://api.brainers.xyz/flashCards/" + id_fc + "/getRandomCard";
 
       fetch(URL, {
         method: "POST",
@@ -131,7 +131,7 @@ const TakeFlashCards = () => {
   //   const curent_url = window.location.href;
   //   const id_fc = curent_url.split("/")[5];
   //   const URL =
-  //     "https://api.brainers.xyz:80/flashCards/" +
+  //     "https://api.brainers.xyz/flashCards/" +
   //     id_fc +
   //     "/getInformationsAfterAnswering";
 

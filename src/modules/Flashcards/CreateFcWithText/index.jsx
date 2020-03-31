@@ -73,7 +73,7 @@ const CreateFlashCards = () => {
     e.preventDefault();
     console.log(form);
     let URL =
-      "https://api.brainers.xyz:80/flashCards/new?recto_type=text&verso_type=text&fc_name=" +
+      "https://api.brainers.xyz/flashCards/new?recto_type=text&verso_type=text&fc_name=" +
       fcName +
       "&recto_name=" +
       rectoName +

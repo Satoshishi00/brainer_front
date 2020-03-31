@@ -28,7 +28,7 @@ const TakeQuizz = () => {
         console.log(error);
       } else if (data.logout) {
         console.log("On se déconnecte");
-        window.location.replace("https://www.brainers.xyz:80/signin");
+        window.location.replace("https://www.brainers.xyz/signin");
       } else if (data.finish) {
         setIsFinish(data.finish);
         if (quizz) {
@@ -60,7 +60,7 @@ const TakeQuizz = () => {
     const curent_url = window.location.href;
     const id_quizz = curent_url.split("/")[5];
     const URL =
-      "https://api.brainers.xyz:80/quizz/" + id_quizz + "/getRandomQuestion";
+      "https://api.brainers.xyz/quizz/" + id_quizz + "/getRandomQuestion";
 
     fetch(URL, {
       method: "POST",
@@ -85,7 +85,7 @@ const TakeQuizz = () => {
     const curent_url = window.location.href;
     const id_quizz = curent_url.split("/")[5];
     const URL =
-      "https://api.brainers.xyz:80/quizz/" + id_quizz + "/getRandomQuestion";
+      "https://api.brainers.xyz/quizz/" + id_quizz + "/getRandomQuestion";
     fetch(URL, {
       method: "POST",
       headers: {

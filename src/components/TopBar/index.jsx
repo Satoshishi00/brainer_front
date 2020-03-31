@@ -108,7 +108,7 @@ const TopBar = () => {
               className="topbar-account-img mg-r"
               src={
                 cookies.user_image
-                  ? "https://api.brainers.xyz:80/medias/images/" +
+                  ? "https://api.brainers.xyz/medias/images/" +
                     cookies.user_image
                   : "/assets/images/key.png"
               }

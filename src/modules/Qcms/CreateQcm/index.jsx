@@ -57,7 +57,7 @@ const CreateQcm = () => {
     e.preventDefault();
 
     let URL =
-      "https://api.brainers.xyz:80/qcm/new?qcm_name=" +
+      "https://api.brainers.xyz/qcm/new?qcm_name=" +
       form.get("qcmName") +
       "&qcm_description=" +
       form.get("qcmDescription");

@@ -98,7 +98,7 @@ const Profil = () => {
     e.preventDefault();
 
     const URL =
-      "https://api.brainers.xyz:80/account/edit/username?username=" +
+      "https://api.brainers.xyz/account/edit/username?username=" +
       form.get("username");
 
     fetch(URL, {
@@ -134,7 +134,7 @@ const Profil = () => {
     e.preventDefault();
 
     const URL =
-      "https://api.brainers.xyz:80/account/edit/email?old_email=" +
+      "https://api.brainers.xyz/account/edit/email?old_email=" +
       form.get("old_email") +
       "&new_email1=" +
       form.get("new_email1") +
