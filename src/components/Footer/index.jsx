@@ -15,7 +15,9 @@ const Footer = () => {
         </span>
         <span className="bold color-grey flex-weight center">
           <Link className="link" to="/signin">
-            <i className="fab fa-facebook-square fb-color fs-1"></i>
+            <i className="fab fa-facebook-square fb-color fs-1">
+              <span className="none">facebook</span>
+            </i>
           </Link>
         </span>
       </div>
