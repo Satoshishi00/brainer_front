@@ -81,7 +81,7 @@ const Inscription = ({ history }) => {
   const signup = e => {
     e.preventDefault();
     const URL =
-      "http://api.brainers.xyz:80/register?email=" +
+      "https://api.brainers.xyz:80/register?email=" +
       email +
       "&username=" +
       username +

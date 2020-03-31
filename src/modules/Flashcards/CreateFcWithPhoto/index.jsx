@@ -74,7 +74,7 @@ const CreateFcWithPhoto = () => {
     e.preventDefault();
     console.log(form);
     let URL =
-      "http://api.brainers.xyz:80/flashCards/new?recto_type=media&verso_type=text&fc_name=" +
+      "https://api.brainers.xyz:80/flashCards/new?recto_type=media&verso_type=text&fc_name=" +
       fcName +
       "&recto_name=" +
       rectoName +

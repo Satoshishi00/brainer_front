@@ -73,7 +73,7 @@ const Connection = ({ history }) => {
   const signup = e => {
     e.preventDefault();
     const URL =
-      "http://api.brainers.xyz:80/login?email=" +
+      "https://api.brainers.xyz:80/login?email=" +
       email +
       "&password=" +
       password;

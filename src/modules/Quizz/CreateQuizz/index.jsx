@@ -57,7 +57,7 @@ const CreateQuizz = () => {
     e.preventDefault();
 
     let URL =
-      "http://api.brainers.xyz:80/quizz/new?quizz_name=" +
+      "https://api.brainers.xyz:80/quizz/new?quizz_name=" +
       form.get("quizzName") +
       "&quizz_description=" +
       form.get("quizzDescription");

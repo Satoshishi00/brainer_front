@@ -24,7 +24,7 @@ const QcmList = () => {
 
   useEffect(() => {
     const URL =
-      "http://api.brainers.xyz:80/qcm/show/all?limit=16&page_number=1";
+      "https://api.brainers.xyz:80/qcm/show/all?limit=16&page_number=1";
     fetch(URL, {
       method: "POST",
       headers: {
