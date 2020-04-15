@@ -6,7 +6,7 @@ const Qcm = ({ id_qcm, name, description, nb_questions }) => {
   console.log("description = " + description);
   console.log("nb_questions = " + nb_questions);
   return (
-    <Link className="card-container" to={"qcm/" + id_qcm}>
+    <Link className="card-container" to={"quizz/" + id_qcm}>
       <h3>{name}</h3>
       <span className="card-description">{description}</span>
       <span className="qcm-nb_question">

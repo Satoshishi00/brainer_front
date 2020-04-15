@@ -14,7 +14,7 @@ const Home = () => {
   const [cookies] = useCookies(["brainer_id", "brainer_spepper", "user_id"]);
 
   const buildList = useCallback(
-    data => {
+    (data) => {
       console.log(data);
       if (typeof data.error !== undefined && data.error) {
         setError(data.error);
@@ -32,17 +32,17 @@ const Home = () => {
   );
 
   useEffect(() => {
-    const URL = "https://api.brainers.xyz/qcm/show/all?limit=6&page_number=1";
+    const URL = "https://api.brainers.xyz/quizz/show/all?limit=6&page_number=1";
     fetch(URL, {
       method: "GET",
       headers: {
         id: cookies.brainer_id,
         pepper: cookies.brainer_pepper,
         security: "false",
-        Accept: "application/json; odata=verbose"
-      }
+        Accept: "application/json; odata=verbose",
+      },
     })
-      .then(response => response.json())
+      .then((response) => response.json())
       .then(buildList)
       .catch(console.log("error AJAX request"));
   }, []);
@@ -56,7 +56,7 @@ const Home = () => {
       <div className="qcms-container">
         <Loader
           loading={loading}
-          render={qcms.map(qcm => (
+          render={qcms.map((qcm) => (
             <Qcm
               key={qcm.id}
               id_qcm={qcm.id}
